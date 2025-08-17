@@ -9,25 +9,6 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* JavaScriptで表示を切り替えるためのスタイル */
-        .details-hidden {
-            display: none;
-        }
-        .details-visible {
-            display: block;
-            /* 表示されるときにフワッと現れるアニメーション */
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        /* クリックされたボタンを分かりやすくするスタイル */
-        .option-button.active {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
-            border-color: #3B82F6; /* blue-500 */
-        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
@@ -104,43 +85,38 @@
                 </div>
             </section>
 
-            <!-- 表面粗さ測定検討 (JavaScriptでインタラクティブに変更) -->
+            <!-- 表面粗さ測定検討 -->
             <section class="bg-white shadow-md rounded-lg p-6">
                 <h2 class="text-2xl font-semibold border-b pb-2 mb-4">5. 表面粗さ 測定方法検討</h2>
-                <p class="text-gray-600 mb-6">以下の検討案をクリックして詳細を確認してください。</p>
-                
-                <!-- 選択ボタン -->
                 <div class="grid md:grid-cols-3 gap-6 mt-6 text-center">
-                    <button class="option-button bg-gray-50 p-4 rounded-lg border-2 border-gray-200 hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-1" 
-                            data-title="測定方法検討①"
-                            data-img-src="hyoumenteian1.jpg"
-                            data-details='[{"key": "方法", "value": "非接触測定"}, {"key": "時間", "value": "1か所 3分"}, {"key": "価格", "value": "900万円"}]'>
-                        <h3 class="text-lg font-bold">測定方法検討①</h3>
-                        <p class="text-sm text-gray-500 mt-2">非接触測定</p>
-                    </button>
-                    <button class="option-button bg-gray-50 p-4 rounded-lg border-2 border-gray-200 hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-1"
-                            data-title="測定方法検討②"
-                            data-img-src="hyoumenteian2.jpg"
-                            data-details='[{"key": "方法", "value": "メーカーと検討中"}, {"key": "時間", "value": "未定"}, {"key": "価格", "value": "1,500万円(推定)"}]'>
-                        <h3 class="text-lg font-bold">測定方法検討②</h3>
-                        <p class="text-sm text-gray-500 mt-2">メーカーと検討中</p>
-                    </button>
-                    <button class="option-button bg-gray-50 p-4 rounded-lg border-2 border-gray-200 hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-1"
-                            data-title="測定方法検討③"
-                            data-img-src="hyoumenteian3.jpg"
-                            data-details='[{"key": "方法", "value": "現状の測定器を追加購入"}, {"key": "台数", "value": "2台 200万円"}, {"key": "補足", "value": "※増員必須"}]'>
-                        <h3 class="text-lg font-bold">測定方法検討③</h3>
-                        <p class="text-sm text-gray-500 mt-2">現状の測定器を追加購入</p>
-                    </button>
-                </div>
-
-                <!-- 詳細表示エリア -->
-                <div id="details-container" class="details-hidden mt-8 p-6 bg-blue-50 rounded-lg border border-blue-200">
-                    <h3 id="details-title" class="text-xl font-bold mb-4 text-gray-800"></h3>
-                    <div class="grid md:grid-cols-2 gap-6 items-start">
-                        <img id="details-img" src="" alt="詳細画像" class="rounded-lg shadow-md w-full h-auto object-cover">
-                        <ul id="details-list" class="text-left space-y-2 text-gray-700">
-                            <!-- JavaScriptで内容がここに追加されます -->
+                    <!-- 検討① -->
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="text-lg font-bold mb-2">測定方法検討①</h3>
+                        <img src="hyoumenteian1.jpg" alt="非接触測定器" class="rounded-lg shadow-md w-full h-48 object-cover mb-4">
+                        <ul class="text-left space-y-1">
+                            <li><strong>方法:</strong> 非接触測定</li>
+                            <li><strong>時間:</strong> 1か所 3分</li>
+                            <li><strong>価格:</strong> 900万円</li>
+                        </ul>
+                    </div>
+                    <!-- 検討② -->
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="text-lg font-bold mb-2">測定方法検討②</h3>
+                        <img src="hyoumenteian2.jpg" alt="メーカーと検討中" class="rounded-lg shadow-md w-full h-48 object-cover mb-4">
+                         <ul class="text-left space-y-1">
+                            <li><strong>方法:</strong> メーカーと検討中</li>
+                            <li><strong>時間:</strong> 未定</li>
+                            <li><strong>価格:</strong> 1,500万円(推定)</li>
+                        </ul>
+                    </div>
+                    <!-- 検討③ -->
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="text-lg font-bold mb-2">測定方法検討③</h3>
+                        <img src="hyoumenteian3.jpg" alt="現状の測定器" class="rounded-lg shadow-md w-full h-48 object-cover mb-4">
+                         <ul class="text-left space-y-1">
+                            <li><strong>方法:</strong> 現状の測定器を追加購入</li>
+                            <li><strong>台数:</strong> 2台 200万円</li>
+                            <li>※増員必須</li>
                         </ul>
                     </div>
                 </div>
@@ -190,63 +166,11 @@
                     <img src="hosoku.jpg" alt="補足資料" class="rounded-lg shadow-md w-full h-auto object-cover">
                 </div>
             </section>
-
-            <!-- マインドマップ -->
-            <section class="bg-white shadow-md rounded-lg p-6">
-                <h2 class="text-2xl font-semibold border-b pb-2 mb-4">マインドマップによる分析</h2>
-                <div class="mt-4 bg-gray-50 p-4 rounded-lg">
-                    <img src="mindmap.png" alt="NotebookLMのマインドマップ" class="rounded-lg w-full h-auto object-contain">
-                </div>
-            </section>
         </main>
 
         <footer class="text-center text-gray-500 mt-12 pb-4">
             <p>&copy; 2025 会社名. All Rights Reserved.</p>
         </footer>
     </div>
-
-    <!-- JavaScriptのコード -->
-    <script>
-        // 必要なHTML要素をすべて取得します
-        const optionButtons = document.querySelectorAll('.option-button');
-        const detailsContainer = document.getElementById('details-container');
-        const detailsTitle = document.getElementById('details-title');
-        const detailsImg = document.getElementById('details-img');
-        const detailsList = document.getElementById('details-list');
-
-        // 各ボタンに「クリックされたらこれを実行する」という命令を追加します
-        optionButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // 1. まず、すべてのボタンのハイライト（activeクラス）を解除します
-                optionButtons.forEach(btn => btn.classList.remove('active'));
-                // 2. 次に、今クリックされたボタンだけをハイライトします
-                button.classList.add('active');
-
-                // 3. クリックされたボタンに埋め込まれている情報を取得します
-                const title = button.dataset.title;
-                const imgSrc = button.dataset.imgSrc;
-                // JSONという形式の文字列を、プログラムで扱える形式に変換します
-                const details = JSON.parse(button.dataset.details);
-
-                // 4. 取得した情報で、詳細表示エリアの中身を書き換えます
-                detailsTitle.textContent = title;
-                detailsImg.src = imgSrc;
-                detailsImg.alt = title;
-                
-                // 詳細リストは一度空にしてから、新しい項目を追加します
-                detailsList.innerHTML = ''; // 中身を空にする
-                details.forEach(item => {
-                    const li = document.createElement('li'); // li要素を新しく作る
-                    // HTMLのコードを組み立てて、li要素の中に入れる
-                    li.innerHTML = `<strong class="font-semibold">${item.key}:</strong> ${item.value}`;
-                    detailsList.appendChild(li); // 完成したli要素をリストに追加
-                });
-
-                // 5. 最後に、隠れていた詳細エリアを表示させます
-                detailsContainer.classList.remove('details-hidden');
-                detailsContainer.classList.add('details-visible');
-            });
-        });
-    </script>
 </body>
 </html>
